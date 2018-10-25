@@ -1,0 +1,24 @@
+{
+    "name": "What's my browser",
+    "version": "0.1",
+    "description": "Report user problem to the compagny",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["contentScript.js"]
+        }
+      ],
+    "permissions": [
+        "storage",
+        "activeTab", 
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_popup": "dist/whats.html"
+    },
+    "manifest_version": 2
+  }
